@@ -1,0 +1,6 @@
+baseURL = "www.chuidylan.com"
+languageCode = "zh-cn"
+title = "ChuiDylan's Blog"
+theme = "hugo-tranquilpeak-theme"
+
+# Sidebar
