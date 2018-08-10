@@ -1,5 +1,5 @@
 deploy: build
-	scp -r ./public/ root@chuidylan:/var/www/html/blog/
+	scp -r ./public/ root@chuidylan:/var/www/html/
 
 build: clean
 	hugo

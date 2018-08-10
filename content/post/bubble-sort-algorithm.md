@@ -11,7 +11,7 @@ keywords:
 - 排序
 - 算法
 - algorithm
-comments:       true    # 是否显示评论按钮
+comments:       false    # 是否显示评论按钮
 showMeta:       true    # 是否在标题下显示详细信息
 # metaAlignment: center # 标题下显示详细信息的位置
 showActions:    true    # 是否显示详情页右下角的按钮
