@@ -20,4 +20,4 @@ showActions:    true    # 是否显示详情页右下角的按钮
 
 <!--more-->
 
-<font face="Microsoft YaHe" color="lightgray">声明: 本文只作学习用途，如果侵权请及时联系<a href="mailto:chuidylan@gmail.com">Chui Dylan</a>删除，谢谢！！！</font>
+<font face="Microsoft YaHe" color="lightgray">声明: 本文只作学习用途，如有侵权请及时联系<a href="mailto:chuidylan@gmail.com">Chui Dylan</a>删除，谢谢！！！</font>
