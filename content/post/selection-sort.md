@@ -36,6 +36,8 @@ showActions:    true    # 是否显示详情页右下角的按钮
 
 <img src="https://github.com/EvanXzj/JS-Sorting-Algorithm/blob/master/res/selectionSort.gif?raw=true"></img>
 
+> 图片源自GitHub
+
 ## 复杂度分析
 
     1. 时间复杂度是O(n^2)

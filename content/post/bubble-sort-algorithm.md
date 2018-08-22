@@ -47,7 +47,7 @@ showActions:    true    # 是否显示详情页右下角的按钮
         - 时间复杂度(Time Complexity)： 是一个函数，它定性描述了该算法的运行时间，记做T(n)=O(fn(n))。
 
         - 空间复杂度(Space Complexity): 是对一个算法在运行过程中临时占用存储空间大小的量度，记做S(n)=O(f(n))。
-        
+
     2. 冒泡排序时间复杂度： O(n^2)
 
     3. 冒泡排序空间复杂度：O(1)
@@ -58,7 +58,7 @@ showActions:    true    # 是否显示详情页右下角的按钮
 function bubbleSort(arr) {
     const len = arr.length
     for(let i = 0; i < len - 1; i++) {
-        for(let j=0; j < len - i - 1; j++) {
+        for(let j = 0; j < len - i - 1; j++) {
             if (arr[j] > arr[j+1]) {
                 const temp = arr[j+1]
                 arr[j+1] = arr[j]
@@ -75,16 +75,16 @@ function bubbleSort(arr) {
 
 ```golang
 func bubbleSort(arr []int) []int {
-    length := len(arr)
-    for i:=0; i < length - 1; i++ {
-        for j:=0; j < length - i - 1; j++ {
-            if arr[j] > arr[j+1] {
-                arr[j+1], arr[j] = arr[j], arr[j+1]
-            }
-        }
-    }
+	length := len(arr)
+	for i := 0; i < length-1; i++ {
+		for j := 0; j < length-i-1; j++ {
+			if arr[j] > arr[j+1] {
+				arr[j+1], arr[j] = arr[j], arr[j+1]
+			}
+		}
+	}
 
-    return arr
+	return arr
 }
 ```
 
