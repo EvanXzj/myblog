@@ -279,6 +279,9 @@ DETAIL:  Failing row contains (2, bob@EXAMPLE.com, Bob, Barker).
 
 惟一比糟糕的命名约定更糟糕的是多重命名约定。如果您现有的项目已经有了命名其数据库对象的标准方法，那么请继续使用它。
 
-你有什么要补充的吗? 有什么方法可以改进其中的一些指导方针，或者只是觉得其中的一些很糟糕? [让我知道](sehrope@jackdb.com)!
+你有什么要补充的吗? 有什么方法可以改进其中的一些指导方针，或者只是觉得其中的一些观点很糟糕? [让我知道](sehrope@jackdb.com)!
+
+<a href="https://launchbylunch.com/posts/2014/Feb/16/sql-naming-conventions/" target="_blank">原文链接</a>
+
 
 <font face="Microsoft YaHe" color="lightgray">声明: 本文只作学习用途，如有侵权请及时联系<a href="mailto:chuidylan@gmail.com">Chui Dylan</a>删除，谢谢！！！</font>
