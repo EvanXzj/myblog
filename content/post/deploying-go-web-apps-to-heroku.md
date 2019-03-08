@@ -1,6 +1,6 @@
 ---
 title: "Deploying Go Web Apps to Heroku"
-date: 2019-01-29 T15:14:21+08:00
+date: 2019-01-29T15:14:21+08:00
 categories:
 - Go
 - Heroku
@@ -32,7 +32,7 @@ showActions:    true    # 是否显示详情页右下角的按钮
 
 ## 2. 安装HeroKu命令行工具
 
-查看[下载页面](https://devcenter.heroku.com/articles/heroku-cli#download-and-install), 选择符合自己点的安装方式
+查看[下载页面](https://devcenter.heroku.com/articles/heroku-cli#download-and-install), 选择符合自己电脑的安装方式
 
 - 验证安装, 只要输出以下类似信息即可
 
@@ -50,7 +50,7 @@ heroku login
 
 ## 3. APP 源代码
 
-```go
+```golang
 package main
 
 import (
@@ -88,7 +88,7 @@ func GetPort() string {
 ## 4. 安装项目依赖
 
 ```bash
-# 1.
+# 1. 安装godep
 go get github.com/tools/godep
 
 # 2. 进入项目根目录，执行以下命令
