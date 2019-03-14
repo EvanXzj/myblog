@@ -1,5 +1,5 @@
 ---
-title: "观察者模式（Observer Design Patterns）"
+title: "观察者模式和发布订阅模式"
 date: 2019-02-20T18:01:54+08:00
 categories:
 - 设计模式
@@ -20,7 +20,7 @@ showActions:    true    # 是否显示详情页右下角的按钮
 设计模式（Design pattern）代表了最佳的实践，通常被有经验的面向对象的软件开发人员所采用。设计模式是软件开发人员在软件开发过程中面临的一般问题的解决方案。使用设计模式的目的：为了代码可重用性、让代码更容易被他人理解、保证代码可靠性。 从而实现项目工程化。
 <!--more-->
 
-## 什么是观察者模式
+## 什么是观察者模式和发布订阅模式
 
 > 模式核心思想: 对象之间的一种一对多的依赖关系，当一个对象的状态发生改变时，所有依赖它的对象都可以得到通知。
 
@@ -32,7 +32,7 @@ showActions:    true    # 是否显示详情页右下角的按钮
 
 从图中可以看出，观察者模式中观察者和目标直接进行交互，而发布订阅模式中统一由调度中心进行处理，订阅者和发布者互不干扰。这样一方面实现了解耦，还有就是可以实现更细粒度的一些控制。比如发布者发布了很多消息，但是不想所有的订阅者都接收到，就可以在调度中心做一些处理，类似于权限控制之类的。还可以做一些节流操作等。
 
-## Javascript 代码实现
+## 观察者模式Javascript代码实现
 
 ```js
 // 观察者类
@@ -102,4 +102,77 @@ subject.notify(10)
 
 // OctalObserver:  12
 // BinaryObserver:  1010
+```
+
+## 发布订阅模式Javascript代码实现
+
+```js
+class MyEventEmitter {
+  constructor() {
+    this.listeners = new Map()
+  }
+
+  on(eventName, cb) {
+    // TODO:
+    // eventName type and value check
+    // cb function check here
+
+    this.listeners.has(eventName) || this.listeners.set(eventName, [])
+    this.listeners.get(eventName).push(cb)
+  }
+
+  emit(eventName, ...args) {
+    const listeners = this.listeners.get(eventName)
+
+    if (listeners.length) {
+      listeners.forEach(listener => {
+        listener(...args)
+      })
+
+      return true
+    }
+
+    return false
+  }
+
+  off(eventName, listener) {
+    const listeners = this.listeners.get(eventName)
+    let index = -1
+    if (listeners && listeners.length) {
+      listeners.forEach((lisner, idx) => {
+        if (typeof lisner === 'function' && listener === lisner) {
+          index = idx
+        }
+      })
+    }
+
+    if (index > -1) {
+      listeners.splice(index, 1)
+      this.listeners.set(eventName, listeners)
+      return true
+    }
+
+    return false
+  }
+}
+
+const myEventEmitter = new MyEventEmitter()
+
+const cb = data => console.log(data)
+myEventEmitter.on('e1', cb)
+myEventEmitter.on('e2', cb)
+
+myEventEmitter.emit('e1', {name: 'ChuiDylan', sex: 'male'})
+myEventEmitter.emit('e2', [1,2,3])
+
+// 移除监听
+myEventEmitter.off('e1', cb)
+console.log()
+myEventEmitter.emit('e1', {name: 'ChuiDylan', sex: 'male'})
+myEventEmitter.emit('e2', [1,2,3])
+// 输出:
+// { name: 'ChuiDylan', sex: 'male' }
+// [ 1, 2, 3 ]
+
+// [ 1, 2, 3 ]
 ```
