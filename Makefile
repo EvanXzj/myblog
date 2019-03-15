@@ -2,13 +2,7 @@
 # 	scp -r ./public/ root@chuidylan:/var/www/html/
 
 deploy:	docker-push
-	ssh root@chuidylan << EOF
-		docker pull xuzhijian/myblog
-		docker stop myblog
-		docker rm myblog
-		docker run --name myblog -v /etc/letsencrypt:/etc/letsencrypt -p 80:80 -p 443:443 -d xuzhijian/myblog
-		exit
-		EOF
+	ssh root@chuidylan "docker pull xuzhijian/myblog; docker stop myblog; docker rm myblog; docker run --name myblog -v /etc/letsencrypt:/etc/letsencrypt -p 80:80 -p 443:443 -d xuzhijian/myblog; exit"
 
 build: clean
 	hugo
