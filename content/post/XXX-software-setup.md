@@ -1,6 +1,6 @@
 ---
 title: "XXX Software Setup"
-date: 2019-03-14T16:26:58+08:00
+date: 2019-03-07T16:26:58+08:00
 categories:
 - Ubuntu
 tags:
