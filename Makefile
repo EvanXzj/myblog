@@ -1,6 +1,9 @@
 # deploy: build
 # 	scp -r ./public/ root@chuidylan:/var/www/html/
 
+deploy:	docker-push
+	ssh root@chuidylan "docker pull xuzhijian/myblog ; docker restart myblog ; exit"
+
 build: clean
 	hugo
 
@@ -13,7 +16,4 @@ docker-build: build
 docker-push: docker-build
 	docker push xuzhijian/myblog
 
-deploy:	docker-push
-	ssh root@chuidylan "docker pull xuzhijian/myblog && docker restart myblog"
-
-.PHONY: deploy build clean
+.PHONY: deploy build clean docker-push docker-build
