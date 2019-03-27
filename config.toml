@@ -32,7 +32,7 @@ canonifyurls = true
 
 [author]
   name = "Chui Dylan"
-  bio = "能吃，能睡，能玩"
+  bio = "能吃，能睡，能玩。"
   job = "NodeJS 开发工程师"
   location = "北京"
   # Your Gravatar email. Overwrite `author.picture` everywhere in the blog
