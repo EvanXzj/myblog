@@ -11,6 +11,7 @@ clean:
 	rm -rf ./public
 
 docker-build: build
+	docker rmi xuzhijian/myblog
 	docker build --no-cache -t xuzhijian/myblog .
 
 docker-push: docker-build
